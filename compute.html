@@ -651,15 +651,15 @@ function loadQuiz() {
             optionDiv.classList.add("option");
             optionDiv.innerHTML = `<input type="radio" name="q${idx}" value="${i}"> ${opt}`;
 
-            // Listen to the radio input change
             optionDiv.querySelector("input").addEventListener("change", function() {
                 const selectedVal = parseInt(this.value);
 
-                // Disable all options
+                // Disable all radio buttons for this question
                 questionDiv.querySelectorAll("input").forEach(inp => inp.disabled = true);
 
-                // Add correct/wrong styling
+                // Highlight correct and wrong options
                 questionDiv.querySelectorAll(".option").forEach((optEl, optIdx) => {
+                    optEl.classList.remove("correct", "wrong"); // remove previous
                     if (optIdx === q.answer) optEl.classList.add("correct");
                     if (optIdx === selectedVal && selectedVal !== q.answer) optEl.classList.add("wrong");
                 });
@@ -684,10 +684,10 @@ function updateScore() {
     document.getElementById("result").innerText = `Your Score: ${score} / ${mcqs.length}`;
 }
 
-// Initialize quiz
 loadQuiz();
 </script>
 
 </body>
 </html>
+
 
