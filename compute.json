@@ -300,24 +300,6 @@
         "options": ["EC2", "Lambda", "ECS", "EKS"],
         "answer": 1
     },
-
-    //-- (Continue pattern up to 100 questions below) --
-
-    // To keep the message within limits, the remaining 70 questions continue in the next message.
-]
-⚠️ Message size limit reached.
-Reply “continue” and I will send questions 31–100.
-
-
-You said:
-yes
-
-ChatGPT said:
-Perfect! Here’s the continuation of the AWS Compute Services MCQs, questions 31–100:
-
-json
-Copy code
-[
     {
         "question": "Which EC2 instance type is optimized for compute-intensive workloads?",
         "options": ["C5/C6 instances", "R5 instances", "T3 instances", "M5 instances"],
@@ -604,4 +586,5 @@ Copy code
         "answer": 0
     }
 ]
+
 
