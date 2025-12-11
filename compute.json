@@ -1,22 +1,156 @@
 [
     {
-        "question": "Which HTML tag is used to create a hyperlink?",
-        "options": ["<a>", "<link>", "<href>", "<hyper>"],
+        "question": "Which AWS compute service provides resizable virtual servers in the cloud?",
+        "options": ["AWS Lambda", "Amazon EC2", "AWS Batch", "Amazon EKS"],
+        "answer": 1
+    },
+    {
+        "question": "Which AWS service lets you run code without provisioning servers?",
+        "options": ["Amazon EC2", "AWS Lambda", "Amazon ECS", "AWS Outposts"],
+        "answer": 1
+    },
+    {
+        "question": "Which compute service automatically adds or removes EC2 instances based on demand?",
+        "options": ["AWS Lambda", "EC2 Auto Scaling", "AWS Fargate", "AWS Batch"],
+        "answer": 1
+    },
+    {
+        "question": "Which AWS service is used for container orchestration using Docker?",
+        "options": ["Amazon ECS", "Amazon S3", "Amazon RDS", "AWS Lambda"],
         "answer": 0
     },
     {
-        "question": "Which CSS property controls text size?",
-        "options": ["font-style", "text-size", "font-size", "size"],
+        "question": "Which compute service provides Kubernetes as a managed service?",
+        "options": ["Amazon ECS", "Amazon EKS", "AWS Batch", "AWS Fargate"],
+        "answer": 1
+    },
+    {
+        "question": "Which AWS service runs containers without managing servers?",
+        "options": ["Amazon EC2", "AWS Lambda", "AWS Fargate", "Amazon Lightsail"],
         "answer": 2
     },
     {
-        "question": "Which keyword is used to declare a variable in JavaScript?",
-        "options": ["var", "int", "let", "declare"],
+        "question": "Which compute service manages batch processing jobs?",
+        "options": ["AWS Batch", "AWS Lambda", "Amazon EMR", "AWS Outposts"],
         "answer": 0
     },
     {
-        "question": "Which HTML element is used to insert an image?",
-        "options": ["<img>", "<image>", "<pic>", "<src>"],
+        "question": "Which AWS compute service offers simplified VPS hosting?",
+        "options": ["Amazon EC2", "Amazon Lightsail", "AWS Lambda", "Amazon EKS"],
+        "answer": 1
+    },
+    {
+        "question": "Which service extends AWS compute infrastructure to on-premises locations?",
+        "options": ["AWS Outposts", "AWS Lambda", "AWS Fargate", "Amazon ECS"],
         "answer": 0
-    }
+    },
+    {
+        "question": "Which AWS service provides a PaaS for deploying applications without managing servers directly?",
+        "options": ["AWS Lambda", "AWS Elastic Beanstalk", "Amazon EKS", "AWS Wavelength"],
+        "answer": 1
+    },
+    {
+        "question": "Which compute model allows bidding on unused AWS capacity at discounted prices?",
+        "options": ["On-Demand Instances", "Reserved Instances", "Spot Instances", "Savings Plans"],
+        "answer": 2
+    },
+    {
+        "question": "Which EC2 pricing model offers long-term commitment for savings?",
+        "options": ["Reserved Instances", "Spot Instances", "On-Demand", "Fargate Pricing"],
+        "answer": 0
+    },
+    {
+        "question": "Which service optimizes compute resources and provides recommendations for instance types?",
+        "options": ["AWS Compute Optimizer", "AWS Config", "AWS Batch", "AWS CloudTrail"],
+        "answer": 0
+    },
+    {
+        "question": "Which AWS tool automates OS image creation for EC2?",
+        "options": ["EC2 Image Builder", "AWS Batch", "Lightsail", "S3"],
+        "answer": 0
+    },
+    {
+        "question": "Which processor family is AWS’s custom-built ARM-based CPU?",
+        "options": ["Intel Xeon", "AMD EPYC", "AWS Graviton", "ARM Cortex"],
+        "answer": 2
+    },
+    {
+        "question": "Which AWS chip is optimized for machine learning inference workloads?",
+        "options": ["AWS Graviton", "AWS Inferentia", "AWS Trainium", "NVIDIA Tesla"],
+        "answer": 1
+    },
+    {
+        "question": "Which AWS hardware accelerates machine learning training?",
+        "options": ["AWS Fargate", "AWS Trainium", "AWS Inferentia", "AWS Compute Optimizer"],
+        "answer": 1
+    },
+    {
+        "question": "Which service enables low-latency compute at telecom 5G networks?",
+        "options": ["AWS Wavelength", "AWS Outposts", "EC2 Spot", "AWS Lambda"],
+        "answer": 0
+    },
+    {
+        "question": "Which feature moves AWS compute/storage closer to users through regional extensions?",
+        "options": ["AWS Outposts", "Local Zones", "AWS Batch", "EKS"],
+        "answer": 1
+    },
+    {
+        "question": "Which service enables compute and storage on rugged physical devices for edge computing?",
+        "options": ["AWS Snowball", "AWS Outposts", "AWS Lambda", "Amazon ECS Anywhere"],
+        "answer": 0
+    },
+    {
+        "question": "Which EC2 feature provides a secure isolated environment for virtualization?",
+        "options": ["Nitro System", "Fargate", "Beanstalk", "Lightsail"],
+        "answer": 0
+    },
+    {
+        "question": "Which AWS operating system is optimized for running containers?",
+        "options": ["Windows Server", "RHEL", "Bottlerocket", "Ubuntu"],
+        "answer": 2
+    },
+    {
+        "question": "Which AWS offering provides discounted compute across EC2, Lambda, and Fargate?",
+        "options": ["Savings Plans", "Spot Instances", "On-Demand", "Free Tier"],
+        "answer": 0
+    },
+    {
+        "question": "Which compute option allows running containers directly on EC2 instances?",
+        "options": ["Amazon ECS", "AWS Batch", "EC2 Auto Scaling", "AWS Lambda"],
+        "answer": 0
+    },
+    {
+        "question": "Which ECS launch type runs containers on dedicated EC2 instances?",
+        "options": ["Fargate", "EC2 launch type", "Lambda launch type", "Batch launch type"],
+        "answer": 1
+    },
+    {
+        "question": "Which service helps deploy and scale web applications with minimal configuration?",
+        "options": ["Elastic Beanstalk", "AWS Batch", "ECS Anywhere", "AWS Lambda"],
+        "answer": 0
+    },
+    {
+        "question": "Which service allows running ECS workloads on on-premises servers?",
+        "options": ["EKS Anywhere", "Lightsail", "ECS Anywhere", "AWS Outposts"],
+        "answer": 2
+    },
+    {
+        "question": "Which tool helps manage Kubernetes clusters outside AWS but integrates with EKS?",
+        "options": ["EKS Anywhere", "Lambda", "Batch", "Lightsail"],
+        "answer": 0
+    },
+    {
+        "question": "Which AWS service provides fully managed queues for serverless automation?",
+        "options": ["SQS", "Lambda", "ECS", "Batch"],
+        "answer": 1
+    },
+    {
+        "question": "Which AWS compute service best suits event-driven architectures?",
+        "options": ["EC2", "Lambda", "ECS", "EKS"],
+        "answer": 1
+    },
+
+    //-- (Continue pattern up to 100 questions below) --
+
+    // To keep the message within limits, the remaining 70 questions continue in the next message.
 ]
