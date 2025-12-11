@@ -30,19 +30,6 @@
     .correct { background-color: #d4edda; border-left: 5px solid #28a745; }
     .wrong { background-color: #f8d7da; border-left: 5px solid #dc3545; }
     input[type="radio"] { margin-right: 10px; }
-    button {
-        padding: 12px 25px;
-        background: #007bff;
-        border: none;
-        color: white;
-        cursor: pointer;
-        border-radius: 6px;
-        margin-top: 20px;
-        display: block;
-        width: 100%;
-        font-size: 16px;
-    }
-    button:hover { background: #0056b3; }
     #result {
         margin-top: 25px;
         font-weight: bold;
@@ -61,73 +48,70 @@
 </div>
 
 <script>
-    let mcqs = [];
+let mcqs = [
+    {
+        "question": "Which AWS service allows running containers without managing servers?",
+        "options": ["EC2", "Fargate", "Lambda", "ECS EC2 launch type"],
+        "answer": 1
+    },
+    {
+        "question": "Which AWS compute service is serverless and charges only for execution duration?",
+        "options": ["EC2 On-Demand", "AWS Lambda", "AWS Fargate", "AWS Batch"],
+        "answer": 1
+    }
+    // Add more questions or load from compute.json
+];
 
-    fetch("compute.json")
-        .then(res => res.json())
-        .then(data => {
-            mcqs = data;
-            loadQuiz();
-        })
-        .catch(err => {
-            document.getElementById("quiz").innerHTML = "Error loading MCQs.";
-           // console.error(err);
-        });
+function loadQuiz() {
+    const quizDiv = document.getElementById("quiz");
+    quizDiv.innerHTML = "";
 
-    function loadQuiz() {
-        const quizDiv = document.getElementById("quiz");
-        quizDiv.innerHTML = "";
-        mcqs.forEach((q, idx) => {
-            const questionDiv = document.createElement("div");
-            questionDiv.classList.add("question");
-            questionDiv.innerHTML = `<h3>${idx + 1}. ${q.question}</h3>`;
-            
-            q.options.forEach((opt, i) => {
-                const optionDiv = document.createElement("div");
-                optionDiv.classList.add("option");
-                optionDiv.innerHTML = `<input type="radio" name="q${idx}" value="${i}"> ${opt}`;
-                
-                optionDiv.addEventListener("click", function() {
-                    const selected = questionDiv.querySelector(`input[name="q${idx}"]:checked`);
-                    if (!selected) return;
+    mcqs.forEach((q, idx) => {
+        const questionDiv = document.createElement("div");
+        questionDiv.classList.add("question");
+        questionDiv.innerHTML = `<h3>${idx + 1}. ${q.question}</h3>`;
 
-                    // Disable all options
-                    const options = questionDiv.querySelectorAll(".option input");
-                    options.forEach(inp => inp.disabled = true);
+        q.options.forEach((opt, i) => {
+            const optionDiv = document.createElement("div");
+            optionDiv.classList.add("option");
+            optionDiv.innerHTML = `<input type="radio" name="q${idx}" value="${i}"> ${opt}`;
 
-                    // Add correct/wrong styling
-                    questionDiv.querySelectorAll(".option").forEach((optEl, optIdx) => {
-                        if (optIdx === q.answer) {
-                            optEl.classList.add("correct");
-                        }
-                        if (optIdx === parseInt(selected.value) && selected.value != q.answer) {
-                            optEl.classList.add("wrong");
-                        }
-                    });
+            // Listen to the radio input change
+            optionDiv.querySelector("input").addEventListener("change", function() {
+                const selectedVal = parseInt(this.value);
 
-                    updateScore();
+                // Disable all options
+                questionDiv.querySelectorAll("input").forEach(inp => inp.disabled = true);
+
+                // Add correct/wrong styling
+                questionDiv.querySelectorAll(".option").forEach((optEl, optIdx) => {
+                    if (optIdx === q.answer) optEl.classList.add("correct");
+                    if (optIdx === selectedVal && selectedVal !== q.answer) optEl.classList.add("wrong");
                 });
 
-                questionDiv.appendChild(optionDiv);
+                updateScore();
             });
 
-            quizDiv.appendChild(questionDiv);
+            questionDiv.appendChild(optionDiv);
         });
-    }
 
-    function updateScore() {
-        let score = 0;
-        mcqs.forEach((q, idx) => {
-            const questionDiv = document.querySelectorAll(".question")[idx];
-            const selected = questionDiv.querySelector(`input[name="q${idx}"]:checked`);
-            if (selected && parseInt(selected.value) === q.answer) {
-                score++;
-            }
-        });
-        document.getElementById("result").innerText = `Your Score: ${score} / ${mcqs.length}`;
-    }
+        quizDiv.appendChild(questionDiv);
+    });
+}
+
+function updateScore() {
+    let score = 0;
+    mcqs.forEach((q, idx) => {
+        const questionDiv = document.querySelectorAll(".question")[idx];
+        const selected = questionDiv.querySelector(`input[name="q${idx}"]:checked`);
+        if (selected && parseInt(selected.value) === q.answer) score++;
+    });
+    document.getElementById("result").innerText = `Your Score: ${score} / ${mcqs.length}`;
+}
+
+// Initialize quiz
+loadQuiz();
 </script>
 
 </body>
 </html>
-
