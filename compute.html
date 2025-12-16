@@ -50,155 +50,156 @@
 <script>
 let mcqs = [
     {
-        "question": "Which AWS compute service provides resizable virtual servers in the cloud?",
+        "question": "AWS मध्ये कोणती compute सेवा क्लाउडमध्ये resizable virtual servers प्रदान करते?",
         "options": ["AWS Lambda", "Amazon EC2", "AWS Batch", "Amazon EKS"],
         "answer": 1
     },
     {
-        "question": "Which AWS service lets you run code without provisioning servers?",
+        "question": "AWS ची कोणती सेवा तुम्हाला servers provision न करता code चालवण्याची परवानगी देते?",
         "options": ["Amazon EC2", "AWS Lambda", "Amazon ECS", "AWS Outposts"],
         "answer": 1
     },
     {
-        "question": "Which compute service automatically adds or removes EC2 instances based on demand?",
+        "question": "कोणती compute सेवा मागणीवर आधारित EC2 instances आपोआप वाढवते किंवा कमी करते?",
         "options": ["AWS Lambda", "EC2 Auto Scaling", "AWS Fargate", "AWS Batch"],
         "answer": 1
     },
     {
-        "question": "Which AWS service is used for container orchestration using Docker?",
+        "question": "Docker वापरून container orchestration साठी AWS ची कोणती सेवा वापरली जाते?",
         "options": ["Amazon ECS", "Amazon S3", "Amazon RDS", "AWS Lambda"],
         "answer": 0
     },
     {
-        "question": "Which compute service provides Kubernetes as a managed service?",
+        "question": "क्लाउडमध्ये Kubernetes ला managed service म्हणून कोणती compute सेवा प्रदान करते?",
         "options": ["Amazon ECS", "Amazon EKS", "AWS Batch", "AWS Fargate"],
         "answer": 1
     },
     {
-        "question": "Which AWS service runs containers without managing servers?",
+        "question": "कोणती AWS सेवा servers manage न करता containers चालवते?",
         "options": ["Amazon EC2", "AWS Lambda", "AWS Fargate", "Amazon Lightsail"],
         "answer": 2
     },
     {
-        "question": "Which compute service manages batch processing jobs?",
+        "question": "batch processing jobs manage करणारी compute सेवा कोणती आहे?",
         "options": ["AWS Batch", "AWS Lambda", "Amazon EMR", "AWS Outposts"],
         "answer": 0
     },
     {
-        "question": "Which AWS compute service offers simplified VPS hosting?",
+        "question": "AWS मध्ये कोणती compute सेवा साधी VPS hosting प्रदान करते?",
         "options": ["Amazon EC2", "Amazon Lightsail", "AWS Lambda", "Amazon EKS"],
         "answer": 1
     },
     {
-        "question": "Which service extends AWS compute infrastructure to on-premises locations?",
+        "question": "क्लाउड compute infrastructure on-premises पर्यंत वाढवणारी सेवा कोणती आहे?",
         "options": ["AWS Outposts", "AWS Lambda", "AWS Fargate", "Amazon ECS"],
         "answer": 0
     },
     {
-        "question": "Which AWS service provides a PaaS for deploying applications without managing servers directly?",
+        "question": "ज्या AWS सेवेमध्ये servers manage न करता applications deploy करता येतात, ती PaaS सेवा कोणती आहे?",
         "options": ["AWS Lambda", "AWS Elastic Beanstalk", "Amazon EKS", "AWS Wavelength"],
         "answer": 1
     },
     {
-        "question": "Which compute model allows bidding on unused AWS capacity at discounted prices?",
+        "question": "कोणत्या compute model मध्ये unused AWS capacity वर कमी किमतीत bidding करता येते?",
         "options": ["On-Demand Instances", "Reserved Instances", "Spot Instances", "Savings Plans"],
         "answer": 2
     },
     {
-        "question": "Which EC2 pricing model offers long-term commitment for savings?",
+        "question": "EC2 मध्ये long-term commitment द्वारे savings देणारी pricing model कोणती आहे?",
         "options": ["Reserved Instances", "Spot Instances", "On-Demand", "Fargate Pricing"],
         "answer": 0
     },
     {
-        "question": "Which service optimizes compute resources and provides recommendations for instance types?",
+        "question": "कोणती सेवा compute resources optimize करते आणि instance type साठी recommendations देते?",
         "options": ["AWS Compute Optimizer", "AWS Config", "AWS Batch", "AWS CloudTrail"],
         "answer": 0
     },
     {
-        "question": "Which AWS tool automates OS image creation for EC2?",
+        "question": "EC2 साठी OS image creation automate करणारे AWS tool कोणते आहे?",
         "options": ["EC2 Image Builder", "AWS Batch", "Lightsail", "S3"],
         "answer": 0
     },
     {
-        "question": "Which processor family is AWS’s custom-built ARM-based CPU?",
+        "question": "AWS ची custom-built ARM आधारित CPU कोणती आहे?",
         "options": ["Intel Xeon", "AMD EPYC", "AWS Graviton", "ARM Cortex"],
         "answer": 2
     },
     {
-        "question": "Which AWS chip is optimized for machine learning inference workloads?",
+        "question": "machine learning inference workloads साठी optimized AWS chip कोणती आहे?",
         "options": ["AWS Graviton", "AWS Inferentia", "AWS Trainium", "NVIDIA Tesla"],
         "answer": 1
     },
     {
-        "question": "Which AWS hardware accelerates machine learning training?",
+        "question": "machine learning training साठी hardware accelerate करणारी AWS chip कोणती आहे?",
         "options": ["AWS Fargate", "AWS Trainium", "AWS Inferentia", "AWS Compute Optimizer"],
         "answer": 1
     },
     {
-        "question": "Which service enables low-latency compute at telecom 5G networks?",
+        "question": "telecom 5G networks मध्ये low-latency compute enable करणारी सेवा कोणती आहे?",
         "options": ["AWS Wavelength", "AWS Outposts", "EC2 Spot", "AWS Lambda"],
         "answer": 0
     },
     {
-        "question": "Which feature moves AWS compute/storage closer to users through regional extensions?",
+        "question": "regional extensions द्वारे AWS compute/storage users जवळ नेणारी feature कोणती आहे?",
         "options": ["AWS Outposts", "Local Zones", "AWS Batch", "EKS"],
         "answer": 1
     },
     {
-        "question": "Which service enables compute and storage on rugged physical devices for edge computing?",
+        "question": "rugged physical devices वर edge computing enabled compute आणि storage सेवा कोणती आहे?",
         "options": ["AWS Snowball", "AWS Outposts", "AWS Lambda", "Amazon ECS Anywhere"],
         "answer": 0
     },
     {
-        "question": "Which EC2 feature provides a secure isolated environment for virtualization?",
+        "question": "EC2 मध्ये secure isolated environment प्रदान करणारी feature कोणती आहे?",
         "options": ["Nitro System", "Fargate", "Beanstalk", "Lightsail"],
         "answer": 0
     },
     {
-        "question": "Which AWS operating system is optimized for running containers?",
+        "question": "containers साठी optimized AWS operating system कोणती आहे?",
         "options": ["Windows Server", "RHEL", "Bottlerocket", "Ubuntu"],
         "answer": 2
     },
     {
-        "question": "Which AWS offering provides discounted compute across EC2, Lambda, and Fargate?",
+        "question": "EC2, Lambda आणि Fargate साठी discounted compute प्रदान करणारी AWS offering कोणती आहे?",
         "options": ["Savings Plans", "Spot Instances", "On-Demand", "Free Tier"],
         "answer": 0
     },
     {
-        "question": "Which compute option allows running containers directly on EC2 instances?",
+        "question": "EC2 instances वर थेट containers चालवण्यासाठी कोणता compute option वापरला जातो?",
         "options": ["Amazon ECS", "AWS Batch", "EC2 Auto Scaling", "AWS Lambda"],
         "answer": 0
     },
     {
-        "question": "Which ECS launch type runs containers on dedicated EC2 instances?",
+        "question": "ECS मध्ये containers dedicated EC2 instances वर चालवणारा launch type कोणता आहे?",
         "options": ["Fargate", "EC2 launch type", "Lambda launch type", "Batch launch type"],
         "answer": 1
     },
     {
-        "question": "Which service helps deploy and scale web applications with minimal configuration?",
+        "question": "web applications minimal configuration सह deploy आणि scale करणारी सेवा कोणती आहे?",
         "options": ["Elastic Beanstalk", "AWS Batch", "ECS Anywhere", "AWS Lambda"],
         "answer": 0
     },
     {
-        "question": "Which service allows running ECS workloads on on-premises servers?",
+        "question": "on-premises servers वर ECS workloads चालवण्यासाठी कोणती सेवा वापरली जाते?",
         "options": ["EKS Anywhere", "Lightsail", "ECS Anywhere", "AWS Outposts"],
         "answer": 2
     },
     {
-        "question": "Which tool helps manage Kubernetes clusters outside AWS but integrates with EKS?",
+        "question": "AWS बाहेर Kubernetes clusters manage करणार्‍या tool कोणते आहे, जे EKS सोबत integrate होते?",
         "options": ["EKS Anywhere", "Lambda", "Batch", "Lightsail"],
         "answer": 0
     },
     {
-        "question": "Which AWS service provides fully managed queues for serverless automation?",
+        "question": "serverless automation साठी fully managed queues प्रदान करणारी AWS सेवा कोणती आहे?",
         "options": ["SQS", "Lambda", "ECS", "Batch"],
         "answer": 1
     },
     {
-        "question": "Which AWS compute service best suits event-driven architectures?",
+        "question": "event-driven architectures साठी best suited compute service कोणती आहे?",
         "options": ["EC2", "Lambda", "ECS", "EKS"],
         "answer": 1
-    },
+    }
+,
 
      {
         "question": "Which AWS compute service provides resizable virtual servers in the cloud?",
@@ -689,5 +690,6 @@ loadQuiz();
 
 </body>
 </html>
+
 
 
