@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AWS Networking Menu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    nav {
+      background: #232f3e;
+      padding: 10px 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+      font-size: 14px;
+    }
+
+    nav ul li a:hover {
+      background: #ff9900;
+      color: #232f3e;
+    }
+
+    /* Dropdown */
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background: #2e3b4e;
+      min-width: 260px;
+      z-index: 1000;
+    }
+
+    nav ul li:hover ul {
+      display: block;
+    }
+
+    nav ul li ul li a {
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+.quiz-container {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #232f3e;
+}
+
+.question {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.option {
+  background: #eef2f7;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.option:hover {
+  background: #dde6f0;
+}
+
+.correct {
+  background: #c8f7c5 !important;
+  color: #1e7e34;
+}
+
+.wrong {
+  background: #f7c5c5 !important;
+  color: #a71d2a;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+#score {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+  </style>
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li>
+      <a href="#">🌐 Core Networking</a>
+      <ul>
+        <li><a href="#vpc">Amazon VPC</a></li>
+        <li><a href="#subnets">Subnets</a></li>
+        <li><a href="#route-tables">Route Tables</a></li>
+        <li><a href="#igw">Internet Gateway</a></li>
+        <li><a href="#nat">NAT Gateway / Instance</a></li>
+        <li><a href="#eip">Elastic IP</a></li>
+        <li><a href="#sg">Security Groups</a></li>
+        <li><a href="#nacl">Network ACLs</a></li>
+        <li><a href="#peering">VPC Peering</a></li>
+        <li><a href="#tgw">Transit Gateway</a></li>
+        <li><a href="#endpoints">VPC Endpoints</a></li>
+        <li><a href="#privatelink">AWS PrivateLink</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#">🔁 Load Balancing</a>
+      <ul>
+        <li><a href="#elb">Elastic Load Balancing</a></li>
+        <li><a href="#alb">Application Load Balancer</a></li>
+        <li><a href="#nlb">Network Load Balancer</a></li>
+        <li><a href="#gwlb">Gateway Load Balancer</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#">🌍 DNS & Routing</a>
+      <ul>
+        <li><a href="#route53">Amazon Route 53</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#">🌎 Edge & Global</a>
+      <ul>
+        <li><a href="#cloudfront">CloudFront</a></li>
+        <li><a href="#ga">Global Accelerator</a></li>
+        <li><a href="#wavelength">Wavelength</a></li>
+        <li><a href="#localzones">Local Zones</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#">🔐 Hybrid Connectivity</a>
+      <ul>
+        <li><a href="#s2s">Site-to-Site VPN</a></li>
+        <li><a href="#clientvpn">Client VPN</a></li>
+        <li><a href="#dx">Direct Connect</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#">🏢 Hybrid Extensions</a>
+      <ul>
+        <li><a href="#outposts">Outposts</a></li>
+        <li><a href="#ecsanywhere">ECS Anywhere</a></li>
+        <li><a href="#eksanywhere">EKS Anywhere</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#">🛡️ Network Security</a>
+      <ul>
+        <li><a href="#waf">AWS WAF</a></li>
+        <li><a href="#shield">AWS Shield</a></li>
+        <li><a href="#firewall">Firewall Manager</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="#">📡 Monitoring</a>
+      <ul>
+        <li><a href="#flowlogs">VPC Flow Logs</a></li>
+        <li><a href="#reachability">Reachability Analyzer</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<div class="quiz-container">
+  <h1>✅ Amazon VPC Mock Test</h1>
+  <div id="quiz"></div>
+  <div id="score"></div>
+</div>
+<script>
+const quizData = [
+  {
+    "question": "Amazon VPC म्हणजे काय?",
+    "options": [
+      "Physical data center",
+      "Logically isolated virtual network",
+      "Serverless compute service",
+      "Managed database service"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "VPC कोणत्या scope मध्ये असते?",
+    "options": ["Global", "Region", "AZ", "Edge Location"],
+    "answer": 1
+  },
+  {
+    "question": "VPC create करताना काय mandatory आहे?",
+    "options": ["Subnet", "CIDR block", "IGW", "NAT Gateway"],
+    "answer": 1
+  },
+  {
+    "question": "खालीलपैकी कोणता valid private IPv4 CIDR आहे?",
+    "options": ["10.0.0.0/8", "200.0.0.0/8", "8.8.8.0/24", "1.1.1.0/24"],
+    "answer": 0
+  },
+  {
+    "question": "Subnet कोणत्या level वर define होते?",
+    "options": ["Region", "VPC", "AZ", "Global"],
+    "answer": 2
+  },
+  {
+    "question": "Public subnet कसे ओळखले जाते?",
+    "options": [
+      "Public IP attached",
+      "Route to Internet Gateway",
+      "NAT Gateway attached",
+      "Open security group"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Private subnet मधील EC2 ला internet access कसे देता?",
+    "options": ["IGW", "VPC Peering", "NAT Gateway", "Elastic IP"],
+    "answer": 2
+  },
+  {
+    "question": "Route table कशासाठी वापरतात?",
+    "options": [
+      "Firewall rules",
+      "Traffic routing",
+      "DNS resolution",
+      "Monitoring"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "एका subnet ला किती route tables associate करता येतात?",
+    "options": ["0", "1", "Multiple", "Unlimited"],
+    "answer": 1
+  },
+  {
+    "question": "Security Group कसा असतो?",
+    "options": ["Stateless", "Stateful", "Both", "None"],
+    "answer": 1
+  },
+  {
+    "question": "Network ACL कसा असतो?",
+    "options": ["Stateful", "Stateless", "Inbound only", "Outbound only"],
+    "answer": 1
+  },
+  {
+    "question": "Security Group कुठे apply होते?",
+    "options": ["Subnet", "VPC", "Instance/ENI", "Route table"],
+    "answer": 2
+  },
+  {
+    "question": "NACL कुठे apply होते?",
+    "options": ["Instance", "Subnet", "VPC", "AZ"],
+    "answer": 1
+  },
+  {
+    "question": "Default VPC मध्ये subnets कशा असतात?",
+    "options": ["Private", "Public", "Isolated", "Disabled"],
+    "answer": 1
+  },
+  {
+    "question": "Internet Gateway attach केल्यावर काय होते?",
+    "options": [
+      "EC2 public होते",
+      "VPC internet capable होते",
+      "Security disable होते",
+      "Subnet public होते"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "NAT Gateway कुठे deploy करावा लागतो?",
+    "options": ["Private subnet", "Public subnet", "Any subnet", "Outside VPC"],
+    "answer": 1
+  },
+  {
+    "question": "VPC Peering चे limitation कोणते?",
+    "options": [
+      "CIDR overlap allowed",
+      "Transitive routing supported",
+      "CIDR overlap not allowed",
+      "Same region only"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Transitive routing साठी कोणती service वापरतात?",
+    "options": ["Peering", "IGW", "Transit Gateway", "NAT"],
+    "answer": 2
+  },
+  {
+    "question": "VPC Endpoint वापरण्याचा फायदा काय?",
+    "options": [
+      "Internet required",
+      "High latency",
+      "Private AWS access",
+      "Public exposure"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "S3 साठी कोणता endpoint वापरतात?",
+    "options": ["Interface", "Gateway", "Transit", "Private"],
+    "answer": 1
+  },
+  {
+    "question": "AWS PrivateLink कशासाठी?",
+    "options": [
+      "Public access",
+      "Private service connectivity",
+      "Load balancing",
+      "DNS routing"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "VPC Flow Logs कशासाठी?",
+    "options": ["App logs", "DNS logs", "IP traffic logs", "Billing"],
+    "answer": 2
+  },
+  {
+    "question": "VPC मध्ये IPv6 support आहे का?",
+    "options": ["No", "Yes optional", "Default only", "Private only"],
+    "answer": 1
+  },
+  {
+    "question": "एका VPC ला max किती CIDR blocks जोडता येतात?",
+    "options": ["1", "2", "5", "Unlimited"],
+    "answer": 2
+  },
+
+  {
+    "question": "एका application साठी private subnet मधील EC2 ला S3 access हवा आहे, internet न वापरता. काय वापराल?",
+    "options": [
+      "NAT Gateway",
+      "IGW",
+      "Gateway VPC Endpoint",
+      "VPC Peering"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Security Group मध्ये deny rules support असतात का?",
+    "options": ["Yes", "No", "Inbound only", "Outbound only"],
+    "answer": 1
+  },
+  {
+    "question": "NACL मध्ये rule evaluation कशी होते?",
+    "options": ["Random", "All at once", "Number order", "Last match"],
+    "answer": 2
+  },
+  {
+    "question": "High availability साठी NAT Gateway कसे deploy कराल?",
+    "options": [
+      "Single AZ",
+      "One per AZ",
+      "Private subnet",
+      "With peering"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "एका VPC मधील EC2 दुसऱ्या VPC मधील EC2 शी private connect करायचा आहे (CIDR overlap नाही). काय वापराल?",
+    "options": ["IGW", "VPC Peering", "NAT", "Endpoint"],
+    "answer": 1
+  },
+  {
+    "question": "Multiple VPCs मध्ये hub-and-spoke connectivity साठी best service कोणती?",
+    "options": ["Peering", "IGW", "Transit Gateway", "VPN"],
+    "answer": 2
+  },
+  {
+    "question": "VPC Flow Logs कुठे publish करता येतात?",
+    "options": [
+      "CloudWatch Logs",
+      "S3",
+      "Both",
+      "None"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which component provides subnet-level firewall?",
+    "options": ["Security Group", "NACL", "Route Table", "IGW"],
+    "answer": 1
+  },
+  {
+    "question": "Which component provides instance-level firewall?",
+    "options": ["NACL", "Route Table", "Security Group", "IGW"],
+    "answer": 2
+  },
+  {
+    "question": "VPC Peering मध्ये transitive routing का allowed नाही?",
+    "options": [
+      "Security reason",
+      "Design limitation",
+      "Cost issue",
+      "Performance issue"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Private subnet मधील EC2 ला inbound internet traffic allow करायचा आहे. काय कराल?",
+    "options": [
+      "NAT Gateway",
+      "IGW route",
+      "Not possible directly",
+      "VPC Endpoint"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Which AWS service gives centralized network routing across VPCs?",
+    "options": ["Peering", "Transit Gateway", "IGW", "NACL"],
+    "answer": 1
+  },
+  {
+    "question": "Which service avoids public IP exposure for AWS services?",
+    "options": ["NAT", "IGW", "VPC Endpoint", "Elastic IP"],
+    "answer": 2
+  },
+
+  {
+    "question": "एका कंपनीला compliance साठी all traffic logs हवे आहेत. काय enable कराल?",
+    "options": [
+      "CloudTrail",
+      "VPC Flow Logs",
+      "Config",
+      "Inspector"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which feature allows secure private access to SaaS hosted in another VPC?",
+    "options": ["VPC Peering", "PrivateLink", "NAT", "IGW"],
+    "answer": 1
+  },
+  {
+    "question": "Which AWS service helps analyze if EC2 can reach another resource?",
+    "options": [
+      "Flow Logs",
+      "Reachability Analyzer",
+      "CloudTrail",
+      "Trusted Advisor"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "VPC मध्ये DNS resolution default कसे असते?",
+    "options": [
+      "Disabled",
+      "Enabled",
+      "Manual",
+      "Optional"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Which routing target is used to send internet traffic?",
+    "options": ["NAT", "IGW", "TGW", "Endpoint"],
+    "answer": 1
+  }
+];
+
+
+let score = 0;
+const quizDiv = document.getElementById("quiz");
+
+quizData.forEach((q, index) => {
+  const questionDiv = document.createElement("div");
+  questionDiv.innerHTML = `<div class="question">${index + 1}. ${q.question}</div>`;
+
+  q.options.forEach((opt, i) => {
+    const optionDiv = document.createElement("div");
+    optionDiv.className = "option";
+    optionDiv.innerText = opt;
+
+    optionDiv.onclick = () => {
+      const options = optionDiv.parentElement.querySelectorAll(".option");
+      options.forEach(o => o.classList.add("disabled"));
+
+      if (i === q.answer) {
+        optionDiv.classList.add("correct");
+        score++;
+      } else {
+        optionDiv.classList.add("wrong");
+        options[q.answer].classList.add("correct");
+      }
+
+      document.getElementById("score").innerText =
+        `Score: ${score} / ${quizData.length}`;
+    };
+
+    questionDiv.appendChild(optionDiv);
+  });
+
+  quizDiv.appendChild(questionDiv);
+});
+</script>
+</body>
+
+</html>
