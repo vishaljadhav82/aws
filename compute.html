@@ -200,211 +200,151 @@ let mcqs = [
         "answer": 1
     }
 ,
-    {
-        "question": "Which EC2 instance type is optimized for compute-intensive workloads?",
-        "options": ["C5/C6 instances", "R5 instances", "T3 instances", "M5 instances"],
-        "answer": 0
-    },
-    {
-        "question": "Which EC2 instance type is optimized for memory-intensive workloads?",
-        "options": ["C5/C6 instances", "R5 instances", "T3 instances", "M5 instances"],
-        "answer": 1
-    },
-    {
-        "question": "Which EC2 instance type provides a balance of compute, memory, and network?",
-        "options": ["C5 instances", "R5 instances", "M5 instances", "T3 instances"],
-        "answer": 2
-    },
-    {
-        "question": "Which EC2 instance type is ideal for burstable workloads?",
-        "options": ["C5", "R5", "T3", "M5"],
-        "answer": 2
-    },
-    {
-        "question": "Which AWS service allows deploying containers on EC2 or Fargate using serverless containers?",
-        "options": ["AWS Batch", "Amazon ECS", "AWS Lambda", "EKS Anywhere"],
-        "answer": 1
-    },
-    {
-        "question": "Which service allows running machine learning inference at the edge?",
-        "options": ["AWS Inferentia", "AWS Trainium", "AWS Lambda", "AWS Outposts"],
-        "answer": 0
-    },
-    {
-        "question": "Which EC2 pricing model provides compute at the lowest cost with interruption possibility?",
-        "options": ["On-Demand", "Spot Instances", "Reserved Instances", "Savings Plans"],
-        "answer": 1
-    },
-    {
-        "question": "Which compute service is serverless and charges only for execution duration?",
-        "options": ["EC2 On-Demand", "AWS Lambda", "AWS Fargate", "AWS Batch"],
-        "answer": 1
-    },
-    {
-        "question": "Which AWS compute service provides HPC clusters for parallel processing?",
-        "options": ["AWS Batch", "EC2 HPC instances", "Lambda", "ECS"],
-        "answer": 1
-    },
-    {
-        "question": "Which AWS service provides GPU-powered instances for deep learning?",
-        "options": ["AWS Graviton", "P3/P4 EC2 instances", "T3 instances", "R5 instances"],
-        "answer": 1
-    },
-    {
-        "question": "Which compute service allows running containers using Kubernetes on managed EC2 instances?",
-        "options": ["Amazon ECS", "Amazon EKS", "AWS Lambda", "AWS Batch"],
-        "answer": 1
-    },
-    {
-        "question": "Which service enables automatic provisioning and scaling of containers in ECS?",
-        "options": ["Fargate", "ECS Service Scheduler", "EC2 Auto Scaling", "Lambda"],
-        "answer": 1
-    },
-    {
-        "question": "Which AWS service supports hybrid cloud Kubernetes deployments?",
-        "options": ["EKS Anywhere", "ECS Anywhere", "Lambda", "Lightsail"],
-        "answer": 0
-    },
-    {
-        "question": "Which compute service allows you to deploy applications from Git repositories automatically?",
-        "options": ["Elastic Beanstalk", "AWS CodeDeploy", "Lambda", "ECS"],
-        "answer": 0
-    },
-    {
-        "question": "Which AWS service allows you to schedule jobs on EC2 or Fargate without managing servers?",
-        "options": ["AWS Batch", "Lambda", "Step Functions", "ECS"],
-        "answer": 0
-    },
-    {
-        "question": "Which AWS compute service is best suited for microservices architecture?",
-        "options": ["EC2", "ECS/Fargate", "Lightsail", "AWS Batch"],
-        "answer": 1
-    },
-    {
-        "question": "Which AWS service provides bare-metal EC2 instances for workloads requiring direct hardware access?",
-        "options": ["Nitro System", "EC2 Bare Metal", "Fargate", "Lambda"],
-        "answer": 1
-    },
-    {
-        "question": "Which AWS compute service helps you run containers without provisioning EC2 instances?",
-        "options": ["ECS with EC2 launch type", "ECS with Fargate launch type", "Lambda", "Batch"],
-        "answer": 1
-    },
-    {
-        "question": "Which AWS service allows you to run Windows or Linux virtual servers in the cloud?",
-        "options": ["EC2", "Lambda", "Fargate", "EKS"],
-        "answer": 0
-    },
-    {
-        "question": "Which AWS service automatically scales containers based on demand and load?",
-        "options": ["EC2 Auto Scaling", "ECS Service Auto Scaling", "Lambda", "Lightsail"],
-        "answer": 1
-    },
-    {
-        "question": "Which AWS compute service provides an environment to test serverless applications before production?",
-        "options": ["Serverless Application Repository", "Elastic Beanstalk", "ECS", "EKS"],
-        "answer": 0
-    },
-    {
-        "question": "Which AWS compute service is specifically optimized for ARM-based workloads?",
-        "options": ["AWS Graviton", "Intel Xeon", "AMD EPYC", "AWS Inferentia"],
-        "answer": 0
-    },
-    {
-        "question": "Which service helps run HPC jobs with automatic scaling and scheduling?",
-        "options": ["AWS Batch", "Lambda", "ECS", "Elastic Beanstalk"],
-        "answer": 0
-    },
-    {
-        "question": "Which AWS service helps reduce cost by recommending optimal EC2 instance types?",
-        "options": ["Compute Optimizer", "EC2 Auto Scaling", "Savings Plans", "ECS"],
-        "answer": 0
-    },
-    {
-        "question": "Which AWS compute service can deploy Docker containers to either EC2 or Fargate?",
-        "options": ["ECS", "EKS", "Lambda", "Batch"],
-        "answer": 0
-    },
-    {
-        "question": "Which service allows developers to deploy applications quickly without managing infrastructure?",
-        "options": ["Elastic Beanstalk", "Lambda", "Fargate", "ECS"],
-        "answer": 0
-    },
-    {
-        "question": "Which compute service is used for event-driven serverless architectures?",
-        "options": ["EC2", "Lambda", "ECS", "Fargate"],
-        "answer": 1
-    },
-    {
-        "question": "Which AWS service provides hybrid compute for on-premises workloads?",
-        "options": ["Outposts", "Lambda", "Fargate", "ECS Anywhere"],
-        "answer": 0
-    },
-    {
-        "question": "Which AWS service offers low-latency compute near 5G networks?",
-        "options": ["Wavelength", "Outposts", "Lightsail", "Lambda"],
-        "answer": 0
-    },
-    {
-        "question": "Which EC2 feature allows instances to be interrupted but at lower cost?",
-        "options": ["Spot Instances", "Reserved Instances", "On-Demand Instances", "Savings Plans"],
-        "answer": 0
-    },
-    {
-        "question": "Which AWS compute service provides a fully managed Kubernetes control plane?",
-        "options": ["EKS", "ECS", "Lambda", "Fargate"],
-        "answer": 0
-    },
-    {
-        "question": "Which compute service uses Nitro System for enhanced security and performance?",
-        "options": ["EC2", "Lambda", "Fargate", "ECS"],
-        "answer": 0
-    },
-    {
-        "question": "Which AWS service is optimized for containerized ML inference workloads?",
-        "options": ["Inferentia", "Trainium", "Graviton", "Lambda"],
-        "answer": 0
-    },
-    {
-        "question": "Which AWS compute service is best suited for batch processing large-scale workloads?",
-        "options": ["Batch", "Lambda", "EC2", "ECS"],
-        "answer": 0
-    },
-    {
-        "question": "Which EC2 instance type provides GPU acceleration for ML training?",
-        "options": ["P3/P4 instances", "T3 instances", "C5 instances", "R5 instances"],
-        "answer": 0
-    },
-    {
-        "question": "Which AWS service allows you to run containers on-premises using ECS?",
-        "options": ["ECS Anywhere", "EKS Anywhere", "Lambda", "Lightsail"],
-        "answer": 0
-    },
-    {
-        "question": "Which compute service offers fully managed serverless containers?",
-        "options": ["Fargate", "ECS EC2 launch type", "EC2", "Lambda"],
-        "answer": 0
-    },
-    {
-        "question": "Which AWS compute service is designed for web applications with minimal configuration?",
-        "options": ["Elastic Beanstalk", "ECS", "Lambda", "Batch"],
-        "answer": 0
-    },
-    {
-        "question": "Which AWS compute service provides ARM-based instances for better performance and cost savings?",
-        "options": ["Graviton", "Inferentia", "Trainium", "Intel Xeon"],
-        "answer": 0
-    },
-    {
-        "question": "Which AWS compute service enables running Linux or Windows virtual machines?",
-        "options": ["EC2", "Lambda", "Fargate", "ECS"],
-        "answer": 0
-    },
-    {
-        "question": "Which compute service can scale automatically in response to incoming traffic?",
-        "options": ["EC2 Auto Scaling", "Lambda", "Fargate", "ECS Service Auto Scaling"],
-        "answer": 3
-    },
+   {
+    "question": "कोणता EC2 instance type compute-intensive कामासाठी योग्य आहे?",
+    "options": ["C5/C6 instances", "R5 instances", "T3 instances", "M5 instances"],
+    "answer": 0
+  },
+  {
+    "question": "कोणता EC2 instance type memory-intensive कामासाठी योग्य आहे?",
+    "options": ["C5/C6 instances", "R5 instances", "T3 instances", "M5 instances"],
+    "answer": 1
+  },
+  {
+    "question": "कोणता EC2 instance type compute, memory आणि network यांचा चांगला समतोल देतो?",
+    "options": ["C5 instances", "R5 instances", "M5 instances", "T3 instances"],
+    "answer": 2
+  },
+  {
+    "question": "Burstable workload साठी कोणता EC2 instance type बरा आहे?",
+    "options": ["C5", "R5", "T3", "M5"],
+    "answer": 2
+  },
+  {
+    "question": "EC2 किंवा Fargate वर serverless container deploy करायला कोणती AWS service वापरतात?",
+    "options": ["AWS Batch", "Amazon ECS", "AWS Lambda", "EKS Anywhere"],
+    "answer": 1
+  },
+  {
+    "question": "Edge वर machine learning inference चालवायला कोणती service वापरतात?",
+    "options": ["AWS Inferentia", "AWS Trainium", "AWS Lambda", "AWS Outposts"],
+    "answer": 0
+  },
+  {
+    "question": "सगळ्यात कमी खर्चात, पण interruption होऊ शकणारी EC2 pricing model कोणती?",
+    "options": ["On-Demand", "Spot Instances", "Reserved Instances", "Savings Plans"],
+    "answer": 1
+  },
+  {
+    "question": "Execution time वरच पैसे घेणारी serverless compute service कोणती?",
+    "options": ["EC2 On-Demand", "AWS Lambda", "AWS Fargate", "AWS Batch"],
+    "answer": 1
+  },
+  {
+    "question": "Parallel processing साठी HPC clusters देणारी AWS compute service कोणती?",
+    "options": ["AWS Batch", "EC2 HPC instances", "Lambda", "ECS"],
+    "answer": 1
+  },
+  {
+    "question": "Deep learning साठी GPU-powered instances कोणते?",
+    "options": ["AWS Graviton", "P3/P4 EC2 instances", "T3 instances", "R5 instances"],
+    "answer": 1
+  },
+  {
+    "question": "Managed EC2 वर Kubernetes वापरून containers चालवणारी service कोणती?",
+    "options": ["Amazon ECS", "Amazon EKS", "AWS Lambda", "AWS Batch"],
+    "answer": 1
+  },
+  {
+    "question": "ECS मध्ये containers आपोआप scale करायला कोणती service मदत करते?",
+    "options": ["Fargate", "ECS Service Scheduler", "EC2 Auto Scaling", "Lambda"],
+    "answer": 1
+  },
+  {
+    "question": "Hybrid cloud Kubernetes deployment साठी कोणती service आहे?",
+    "options": ["EKS Anywhere", "ECS Anywhere", "Lambda", "Lightsail"],
+    "answer": 0
+  },
+  {
+    "question": "Git repository मधून app आपोआप deploy करायला कोणती service वापरतात?",
+    "options": ["Elastic Beanstalk", "AWS CodeDeploy", "Lambda", "ECS"],
+    "answer": 0
+  },
+  {
+    "question": "EC2 किंवा Fargate वर jobs schedule करायला, server manage न करता, कोणती service आहे?",
+    "options": ["AWS Batch", "Lambda", "Step Functions", "ECS"],
+    "answer": 0
+  },
+  {
+    "question": "Microservices architecture साठी कोणती compute service सगळ्यात योग्य आहे?",
+    "options": ["EC2", "ECS/Fargate", "Lightsail", "AWS Batch"],
+    "answer": 1
+  },
+  {
+    "question": "Direct hardware access लागणाऱ्या कामासाठी bare-metal EC2 instances देणारी service कोणती?",
+    "options": ["Nitro System", "EC2 Bare Metal", "Fargate", "Lambda"],
+    "answer": 1
+  },
+  {
+    "question": "EC2 instance न उभारता containers चालवायला कोणती service वापरतात?",
+    "options": ["ECS with EC2 launch type", "ECS with Fargate launch type", "Lambda", "Batch"],
+    "answer": 1
+  },
+  {
+    "question": "Cloud मध्ये Windows किंवा Linux virtual server चालवायला कोणती service आहे?",
+    "options": ["EC2", "Lambda", "Fargate", "EKS"],
+    "answer": 0
+  },
+  {
+    "question": "Demand आणि load नुसार containers आपोआप scale करणारी service कोणती?",
+    "options": ["EC2 Auto Scaling", "ECS Service Auto Scaling", "Lambda", "Lightsail"],
+    "answer": 1
+  },
+  {
+    "question": "ARM-based workload साठी खास optimize केलेली compute service कोणती?",
+    "options": ["AWS Graviton", "Intel Xeon", "AMD EPYC", "AWS Inferentia"],
+    "answer": 0
+  },
+  {
+    "question": "Automatic scaling आणि scheduling सह HPC jobs चालवायला कोणती service आहे?",
+    "options": ["AWS Batch", "Lambda", "ECS", "Elastic Beanstalk"],
+    "answer": 0
+  },
+  {
+    "question": "योग्य EC2 instance recommend करून खर्च कमी करणारी service कोणती?",
+    "options": ["Compute Optimizer", "EC2 Auto Scaling", "Savings Plans", "ECS"],
+    "answer": 0
+  },
+  {
+    "question": "Infrastructure manage न करता पटकन application deploy करायला कोणती service आहे?",
+    "options": ["Elastic Beanstalk", "Lambda", "Fargate", "ECS"],
+    "answer": 0
+  },
+  {
+    "question": "Event-driven serverless architecture साठी कोणती service वापरतात?",
+    "options": ["EC2", "Lambda", "ECS", "Fargate"],
+    "answer": 1
+  },
+  {
+    "question": "On-premises workload साठी hybrid compute देणारी service कोणती?",
+    "options": ["Outposts", "Lambda", "Fargate", "ECS Anywhere"],
+    "answer": 0
+  },
+  {
+    "question": "5G network जवळ low-latency compute देणारी service कोणती?",
+    "options": ["Wavelength", "Outposts", "Lightsail", "Lambda"],
+    "answer": 0
+  },
+  {
+    "question": "Fully managed Kubernetes control plane देणारी service कोणती?",
+    "options": ["EKS", "ECS", "Lambda", "Fargate"],
+    "answer": 0
+  },
+  {
+    "question": "Nitro System वापरून जास्त security आणि performance देणारी compute service कोणती?",
+    "options": ["EC2", "Lambda", "Fargate", "ECS"],
+    "answer": 0
+  },
     {
         "question": "Which AWS compute service provides developer-friendly VPS hosting?",
         "options": ["Lightsail", "EC2", "Lambda", "Fargate"],
@@ -539,6 +479,7 @@ loadQuiz();
 
 </body>
 </html>
+
 
 
 
